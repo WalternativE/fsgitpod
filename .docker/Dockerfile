@@ -58,10 +58,10 @@ RUN DOTNET_SDK_VERSION=3.0.100 && \
     tar -zxf dotnet.tar.gz -C /usr/share/dotnet && \
     rm dotnet.tar.gz && \
     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
-ENV DOTNET_CLI_TELEMETRY_OPTOUT 1 \
-    DOTNET_RUNNING_IN_CONTAINER=true \
-    DOTNET_USE_POLLING_FILE_WATCHER=true \
-    NUGET_XMLDOC_MODE=skip
+ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
+ENV DOTNET_RUNNING_IN_CONTAINER=true
+ENV DOTNET_USE_POLLING_FILE_WATCHER=true
+ENV NUGET_XMLDOC_MODE=skip
 RUN mkdir warmup && \
     cd warmup && \
     dotnet new && \
@@ -71,12 +71,12 @@ RUN mkdir warmup && \
 # set env and warmup for user gitpod
 USER gitpod
 
-ENV MONO_THREADS_PER_CPU 50 \
-    FrameworkPathOverride /usr/lib/mono/4.7.2-api/ \
-    DOTNET_CLI_TELEMETRY_OPTOUT 1 \
-    DOTNET_RUNNING_IN_CONTAINER=true \
-    DOTNET_USE_POLLING_FILE_WATCHER=true \
-    NUGET_XMLDOC_MODE=skip
+ENV MONO_THREADS_PER_CPU 50
+ENV FrameworkPathOverride /usr/lib/mono/4.7.2-api/
+ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
+ENV DOTNET_RUNNING_IN_CONTAINER=true
+ENV DOTNET_USE_POLLING_FILE_WATCHER=true
+ENV NUGET_XMLDOC_MODE=skip
 
 RUN mkdir warmup && \
     cd warmup && \
