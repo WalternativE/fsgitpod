@@ -1,6 +1,4 @@
-image:
-  file: .docker/Dockerfile
+image: mcr.microsoft.com/dotnet/core/sdk:3.0
 vscode:
   extensions:
     - Ionide.Ionide-fsharp@4.3.1:OjecMYEuKDdiUjaTUtlrZQ==
-    - ms-vscode.csharp@1.21.7:63Epcq/w+Vl8tIwYMHyrXg==
